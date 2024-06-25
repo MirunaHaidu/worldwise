@@ -1,5 +1,9 @@
 import styles from "./CountryItem.module.css";
-export const CountryItem = () => {
+interface CountryProps {
+  country: any;
+}
+
+export const CountryItem = ({ country }: CountryProps) => {
   return (
     <li className={styles.countryItem}>
       <span>{country.emoji}</span>

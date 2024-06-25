@@ -1,3 +1,4 @@
+import { useParams } from "react-router-dom";
 import styles from "./City.module.css";
 const formatDate = (date) =>
 	new Intl.DateTimeFormat("en", {
@@ -8,6 +9,9 @@ const formatDate = (date) =>
 	}).format(new Date(date));
 
 export const City = () => {
+
+	const { id } = useParams();
+
 	const currentCity = {
 		cityName: "Lisbon",
 		emoji: "🇵🇹",
@@ -20,7 +24,7 @@ export const City = () => {
 	return (
 		<div className={styles.city}>
 			<div className={styles.row}>
-				<h6>City name</h6>
+				<h6>City {id}</h6>
 				<h3>
 					<span>{emoji}</span> {cityName}
 				</h3>
@@ -50,7 +54,7 @@ export const City = () => {
 			</div>
 
 			<div>
-				<ButtonBack />
+				{/* <ButtonBack /> */}
 			</div>
 		</div>
 	);
